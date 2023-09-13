@@ -42,11 +42,12 @@ export default function Todo() {
           <button
             onClick={() => {
               if (userId) {
-                updateUser({
-                  id: userId,
-                  name,
-                  timestamp: getCurrentDateTime(),
-                });
+                dispatch(
+                  updateUser({
+                    id: userId,
+                    name,
+                  })
+                );
                 setName("");
               } else {
                 dispatch(addUser({ name, timestamp: getCurrentDateTime() }));
